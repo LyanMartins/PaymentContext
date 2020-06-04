@@ -9,6 +9,9 @@ namespace PaymentContext.Domain.Entities
     public class Studant : Entity
     {
         private IList<Subscription> _subscriptions;
+        private string v;
+
+
         public Studant(Name name, Document document, Email email)
         {
             Name = name;
@@ -27,6 +30,7 @@ namespace PaymentContext.Domain.Entities
         
         public void AddSubscription(Subscription subscription)
         {
+            
             var hasSubActive = false;
             foreach (var sub in Subscription)
             {

@@ -1,5 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PaymentContext.Domain.Entities;
+using PaymentContext.Domain.Enums;
+using PaymentContext.Domain.ValueObject;
 
 namespace PaymentContext.Tests
 {
@@ -7,11 +9,17 @@ namespace PaymentContext.Tests
     public class StudantTests
     {
         [TestMethod]
-        public void AdicionarAssinatura()
+        public void ShouldReturnErrorWhenActiveSubscription()
         {
-            // var sub = new Subscription(null);
-            // var student = new Studant("Lyan","Martins","242502988","lyan.martins3@gmail.com" );
-            // student.AddSubscription(sub);
+            var name = new Name("bruce","waui");
+            var document = new Document("98532836038",EDocumentType.CPF);
+            var email = new Email("bruce@waui.com");
+            var studant = new Studant(name, document, email);
+            Assert.Fail();
+        }
+        public void ShouldReturnSuccessWhenHadNoActiveSubscription()
+        {
+            Assert.Fail();
         }
     }
 }
