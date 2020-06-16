@@ -12,10 +12,8 @@ namespace PaymentContext.Domain.Commands
 
         public string Document { get; set; }
         public string Email { get; set; }
-
-        public string CardHolderName { get; private set; }
-        public string CardName { get; private set; }
-        public string LastTransactionNumber { get; private set; }
+        public string BarCode { get; set; }
+        public string BoletoNumber { get; set; }
 
 
         public string PaymentNumber { get; set; }
@@ -24,7 +22,7 @@ namespace PaymentContext.Domain.Commands
         public decimal Total { get; set; }
         public decimal TotalPaid { get; set; }
         public string Payer { get; set; }
-        public Document PayerDocument { get; set; }
+        public string PayerDocument { get; set; }
         public EDocumentType PayerDocumentType { get; set; }
         public string Street { get;  set; }
         public string Number { get;  set; }
